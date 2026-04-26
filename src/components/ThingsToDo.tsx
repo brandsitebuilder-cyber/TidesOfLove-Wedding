@@ -1,47 +1,79 @@
 import React from 'react';
-import { useLanguage } from '../LanguageContext';
-import { content } from '../content';
-import { motion } from 'motion/react';
+
+const activities = [
+  {
+    title: 'Surfing at Umhlanga',
+    description: 'Catch waves at the famous Umhlanga Lighthouse Beach. Boards available for rent right on the sand.',
+    image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=600&q=80',
+    tag: 'Adventure',
+  },
+  {
+    title: 'Dolphin Watching',
+    description: 'Bottlenose dolphins frequent these waters year-round. Morning boat tours depart from the harbor.',
+    image: 'https://images.unsplash.com/photo-1602438620213-1c5b86d06390?w=600&q=80',
+    tag: 'Wildlife',
+  },
+  {
+    title: 'Umhlanga Promenade',
+    description: 'A 3km coastal walkway perfect for sunset strolls, connecting the lighthouse to the main beach.',
+    image: 'https://images.unsplash.com/photo-1587502536263-5c74f4e1762a?w=600&q=80',
+    tag: 'Leisure',
+  },
+  {
+    title: 'Snorkeling at Aliwal Shoal',
+    description: 'World-class snorkeling and diving just 30 minutes south. See turtles, rays, and colorful reef fish.',
+    image: 'https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600&q=80',
+    tag: 'Underwater',
+  },
+];
 
 export default function ThingsToDo() {
-  const { language } = useLanguage();
-  const t = content[language].thingsToDo;
-
   return (
-    <section id="things-to-do" className="py-32 md:py-48 bg-brand-bg">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="text-center mb-24"
-        >
-          <h3 className="font-[Pacifico] text-4xl md:text-5xl text-brand-accent mb-4">
-            {t.subtitle}
-          </h3>
-          <h2 className="font-serif text-4xl md:text-6xl text-brand-text uppercase tracking-[0.15em] mb-8">
-            {t.title}
+    <section
+      id="activities"
+      style={{
+        paddingLeft: 'clamp(1.5rem, 5vw, 3rem)',
+        paddingRight: 'clamp(1.5rem, 5vw, 3rem)',
+      }}
+      className="py-20 md:py-28 bg-sand-light"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="font-display text-4xl md:text-5xl text-ocean mb-2">
+            Things to Do
           </h2>
-          <div className="w-px h-16 bg-brand-accent/50 mx-auto mb-16"></div>
-          <p className="font-light text-brand-text/70 leading-[2] tracking-wide text-sm md:text-base max-w-2xl mx-auto">
-            {t.intro}
+          <div className="w-16 h-1 bg-coral rounded-full mx-auto mb-4" />
+          <p className="text-[#1A2F3B]/60 font-body text-base max-w-xl mx-auto">
+            Make a holiday of it — Umhlanga has something for everyone
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-          {t.list.map((item, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: i * 0.1 }}
-              className="border-l border-brand-accent/30 pl-6"
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {activities.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-[16px] overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 group"
             >
-              <h4 className="font-serif text-lg text-brand-text mb-3 tracking-wide">{item.name}</h4>
-              <p className="font-light text-sm text-brand-text/60 leading-[2] tracking-wide">{item.desc}</p>
-            </motion.div>
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-5">
+                <span className="inline-block text-[10px] uppercase tracking-widest font-body font-semibold text-coral mb-2">
+                  {item.tag}
+                </span>
+                <h3 className="font-body font-bold text-[#1A2F3B] text-base mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-[#1A2F3B]/60 font-body text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

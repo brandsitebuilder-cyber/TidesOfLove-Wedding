@@ -1,53 +1,58 @@
 import React from 'react';
-import { useLanguage } from '../LanguageContext';
-import { content } from '../content';
-import { images } from '../assets';
-import { motion } from 'motion/react';
+
+const unsplashHero =
+  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80';
 
 export default function Hero() {
-  const { language } = useLanguage();
-  const t = content[language].hero;
-
   return (
-    <section id="landing" className="relative h-screen flex items-end pb-24 md:items-center md:pb-0 justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={images.hero} 
-          alt="Ané & Lourens" 
-          className="w-full h-full object-cover object-[center_30%] md:object-[center_40%]"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent md:hidden" />
-      </div>
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="relative z-10 text-center text-white px-4 flex flex-col items-center"
-      >
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6 drop-shadow-lg">
-          {t.names.split('&').map((name, i) => (
-            <React.Fragment key={name}>
-              {name.trim()}
-              {i === 0 && <span className="block text-3xl md:text-5xl my-2 font-light italic text-brand-accent">&</span>}
-            </React.Fragment>
-          ))}
-        </h1>
-        <p className="text-sm md:text-lg uppercase tracking-[0.3em] mb-4 font-light drop-shadow-md">
-          {t.date}
+    <section
+      id="hero"
+      style={{
+        paddingLeft: 'clamp(1.5rem, 5vw, 3rem)',
+        paddingRight: 'clamp(1.5rem, 5vw, 3rem)',
+      }}
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${unsplashHero})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/45" />
+
+      {/* Content */}
+      <div className="relative z-10 text-center text-white max-w-4xl mx-auto">
+        <p className="text-coral-light text-lg md:text-xl tracking-widest uppercase font-body font-medium mb-4">
+          Destination Wedding
         </p>
-        <p className="text-xs md:text-sm uppercase tracking-widest mb-12 font-light drop-shadow-md">
-          {t.venue}
-        </p>
-        <a 
-          href="#details" 
-          className="inline-block border border-brand-accent text-white hover:bg-brand-accent hover:text-brand-bg transition-all duration-300 px-10 py-4 uppercase tracking-widest text-sm"
+        <h1
+          className="font-display text-5xl md:text-7xl lg:text-8xl leading-tight mb-6"
+          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
         >
-          {t.rsvpBtn}
-        </a>
-      </motion.div>
+          Sarah &amp; Daniel
+        </h1>
+        <div className="w-20 h-0.5 bg-coral mx-auto mb-6 rounded-full" />
+        <p className="font-body text-lg md:text-xl text-white/90 mb-2">
+          15 February 2027
+        </p>
+        <p className="font-body text-base md:text-lg text-white/70">
+          The Oyster Box Hotel · Umhlanga, South Africa
+        </p>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60">
+        <span className="text-xs tracking-widest uppercase font-body">Scroll</span>
+        <svg
+          className="w-5 h-5 animate-bounce-down"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
     </section>
   );
 }
