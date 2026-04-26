@@ -1,9 +1,7 @@
 import React from 'react';
 
 const venuePhoto =
-  'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80';
-const hotelPhoto =
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80';
+  '/images/venue.jpg';
 
 const accommodations = [
   {

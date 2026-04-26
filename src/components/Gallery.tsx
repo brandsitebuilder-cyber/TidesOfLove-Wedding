@@ -2,28 +2,28 @@ import React from 'react';
 
 const photos = [
   {
-    src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80',
-    alt: 'Sunset beach view',
+    src: '/images/gallery-1.jpg',
+    alt: 'Engagement couple portrait',
   },
   {
-    src: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80',
-    alt: 'Tropical beach',
+    src: '/images/gallery-2.jpg',
+    alt: 'Romantic engagement moment',
   },
   {
-    src: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80',
-    alt: 'Ocean aerial view',
+    src: '/images/gallery-3.jpg',
+    alt: 'Happy couple',
   },
   {
-    src: 'https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80',
-    alt: 'Palm trees at sunset',
+    src: '/images/gallery-4.jpg',
+    alt: 'Engagement portrait',
   },
   {
-    src: 'https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=600&q=80',
-    alt: 'Coastal rocks',
+    src: '/images/gallery-5.jpg',
+    alt: 'Couple smiling',
   },
   {
-    src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
-    alt: 'Tropical island',
+    src: '/images/gallery-6.jpg',
+    alt: 'Engagement celebration',
   },
 ];
 

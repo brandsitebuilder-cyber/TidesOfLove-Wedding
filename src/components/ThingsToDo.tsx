@@ -4,25 +4,25 @@ const activities = [
   {
     title: 'Surfing at Umhlanga',
     description: 'Catch waves at the famous Umhlanga Lighthouse Beach. Boards available for rent right on the sand.',
-    image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=600&q=80',
+    image: '/images/activity-1.jpg',
     tag: 'Adventure',
   },
   {
     title: 'Dolphin Watching',
     description: 'Bottlenose dolphins frequent these waters year-round. Morning boat tours depart from the harbor.',
-    image: 'https://images.unsplash.com/photo-1602438620213-1c5b86d06390?w=600&q=80',
+    image: '/images/activity-2.jpg',
     tag: 'Wildlife',
   },
   {
     title: 'Umhlanga Promenade',
     description: 'A 3km coastal walkway perfect for sunset strolls, connecting the lighthouse to the main beach.',
-    image: 'https://images.unsplash.com/photo-1587502536263-5c74f4e1762a?w=600&q=80',
+    image: '/images/activity-3.jpg',
     tag: 'Leisure',
   },
   {
     title: 'Snorkeling at Aliwal Shoal',
     description: 'World-class snorkeling and diving just 30 minutes south. See turtles, rays, and colorful reef fish.',
-    image: 'https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600&q=80',
+    image: '/images/activity-4.jpg',
     tag: 'Underwater',
   },
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const storyPhoto =
-  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80';
+  '/images/story.jpg';
 
 export default function Story() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const bgImage =
-  'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1920&q=80';
+  '/images/rsvp-bg.jpg';
 
 export default function RSVP() {
   return (
